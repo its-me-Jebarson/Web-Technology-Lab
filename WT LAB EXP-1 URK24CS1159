@@ -1,0 +1,253 @@
+1a
+  
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ex 1a HTML Basics</title>
+</head>
+
+<body>
+    Welcome to HTML Programming
+</body>
+
+</html>
+
+
+1b
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ex 1b Empty Element Example</title>
+</head>
+
+<body>
+    <h2>Welcome to Web Development</h2>
+
+    <br>
+
+    <p>This is my first HTML program.</p>
+</body>
+
+</html>
+
+1c
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ex 1c Heading Tags Example</title>
+</head>
+
+<body>
+    <h1>HTML Heading Level 1</h1>
+    <h2>HTML Heading Level 2</h2>
+    <h3>HTML Heading Level 3</h3>
+    <h4>HTML Heading Level 4</h4>
+    <h5>HTML Heading Level 5</h5>
+    <h6>HTML Heading Level 6</h6>
+</body>
+
+</html>
+
+
+1d
+      
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ex 1d Break Tag Example</title>
+</head>
+
+<body>
+
+    <h2>College Address</h2>
+
+    <p>
+        Jebarson P <br>
+        B.Tech CSE <br>
+        Karunya Institute of Technology and Sciences <br>
+        Coimbatore, Tamil Nadu
+    </p>
+
+</body>
+
+</html>
+
+
+1e
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ex 1e End Tags Example</title>
+</head>
+
+<body>
+
+    <h1>Welcome to HTML</h1>
+
+    <p>
+        HTML is the foundation of web pages.<br>
+        Practice regularly to improve your skills.
+    </p>
+
+</body>
+
+</html>
+
+
+1f
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ex 1f HTML Attributes Demo</title>
+</head>
+<body>
+    <h1>Luxury Sports Car</h1>
+    <img src="C:\Users\jebar\OneDrive\Pictures\Screenshots\Ferrari.png"
+         alt="Red Ferrari Sports Car"
+         width="700"
+         height="400">
+    <br><br>
+    <a href="https://www.ferrari.com"
+       target="_blank">
+        Visit Ferrari Official Website
+    </a>
+</body>
+</html>
+
+
+1g
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 1g Infosys Employee Training Portal</title>
+</head>
+<body style="margin:0;
+             font-family:Arial, Helvetica, sans-serif;
+             background:#f4f6f9;">
+    <div style="background:#0b5cad;
+                color:white;
+                padding:20px;
+                display:flex;
+                align-items:center;
+                box-shadow:0px 3px 8px gray;">
+        <img src="C:\Users\jebar\OneDrive\Pictures\Screenshots\Infosys_logo.png"
+             alt="Infosys Logo"
+             title="Infosys Official Logo"
+             width="120"
+             height="60"
+             style="background:white;
+                    padding:5px;
+                    border-radius:5px;
+                    margin-right:20px;">
+        <div>
+            <h1 style="margin:0;">Infosys Employee Training Portal</h1>
+            <p style="margin:5px 0 0 0; font-size:18px;">
+                Learn, improve and build skills for the digital future.
+            </p>
+        </div>
+    </div>
+    <div style="background:white;
+                margin:20px;
+                padding:20px;
+                border-radius:10px;
+                box-shadow:0px 2px 8px lightgray;">
+        <h2 style="color:#0b5cad;">
+            Digital Skills Development Program
+        </h2>
+        <p style="font-size:17px; line-height:1.6;">
+            Infosys provides technical training programs to help employees develop
+            skills in Artificial Intelligence, Cloud Computing, Cybersecurity,
+            Data Science, and Full-Stack Web Development. These programs enhance
+            professional knowledge and prepare employees for future digital technologies.
+        </p>
+        <img src="C:\Users\jebar\OneDrive\Pictures\Screenshots\Infosys.png"
+             alt="Employee Training"
+             title="Infosys Digital Skills Training"
+             width="100%"
+             style="border-radius:8px;
+                    border:2px solid #ccc;">
+    </div>
+    <div style="background:white;
+                margin:20px;
+                padding:20px;
+                border-radius:10px;
+                box-shadow:0px 2px 8px lightgray;">
+        <h2 style="color:#0b5cad;">
+            Available Training Courses
+        </h2>
+        <ul style="font-size:17px; line-height:2;">
+            <li title="Learn AI algorithms, Machine Learning and Deep Learning">
+                Artificial Intelligence and Machine Learning
+            </li>
+            <li title="Understand Cloud Platforms and Services">
+                Cloud Computing
+            </li>
+            <li title="Protect systems against cyber threats">
+                Cybersecurity
+            </li>
+            <li title="Develop responsive websites using Frontend and Backend technologies">
+                Full-Stack Web Development
+            </li>
+            <li title="Analyze and visualize business data">
+                Data Science
+            </li>
+        </ul>
+    </div>
+    <div style="background:white;
+                margin:20px;
+                padding:20px;
+                border-radius:10px;
+                box-shadow:0px 2px 8px lightgray;
+                text-align:center;">
+        <h2 style="color:#0b5cad;">
+            Explore Infosys
+        </h2>
+        <p>
+            Visit the official Infosys website to learn more about the company
+            and its services.
+        </p>
+        <a href="https://www.infosys.com"
+           target="_blank"
+           title="Visit the Official Infosys Website"
+           style="background:#0b5cad;
+                  color:white;
+                  padding:12px 22px;
+                  text-decoration:none;
+                  border-radius:6px;
+                  margin-right:15px;
+                  display:inline-block;">
+            Visit Infosys Website
+        </a>
+        <a href="https://www.infosys.com/careers"
+           target="_blank"
+           title="Explore Career Opportunities at Infosys"
+           style="background:#28a745;
+                  color:white;
+                  padding:12px 22px;
+                  text-decoration:none;
+                  border-radius:6px;
+                  display:inline-block;">
+            Explore Infosys Careers
+        </a>
+    </div>
+    <div style="background:#1f2937;
+                color:white;
+                text-align:center;
+                padding:18px;
+                margin-top:20px;">
+        © 2026 Infosys Training Portal — HTML Practice Program
+    </div>
+</body>
+</html>
