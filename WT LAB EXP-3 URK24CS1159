@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooking Academy</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:#F6F5F3;
+color:#333;
+}
+header{
+height:85vh;
+background:linear-gradient(135deg,#8B4513,#D2691E,#F4A460);
+display:flex;
+flex-direction:column;
+}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.2);
+}
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#FFD166;
+}
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:18px;
+transition:.3s;
+}
+nav a:hover{
+color:#FFD166;
+}
+.hero{
+margin:auto;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{
+font-size:60px;
+text-shadow:3px 3px 10px black;
+margin-bottom:20px;
+}
+.hero p{
+font-size:22px;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+section{
+padding:60px;
+}
+h2{
+text-align:center;
+color:#8B4513;
+margin-bottom:30px;
+font-size:35px;
+}
+.about{
+display:flex;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+.about img{
+width:420px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+.about p{
+flex:1;
+line-height:1.9;
+text-align:justify;
+font-size:17px;
+}
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+.card{
+width:250px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+text-align:center;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-8px);
+}
+.card h3{
+color:#8B4513;
+margin-bottom:10px;
+}
+@media(max-width:768px){
+nav{
+flex-direction:column;
+}
+.about{
+flex-direction:column;
+}
+.about img{
+width:100%;
+}
+.cards{
+flex-direction:column;
+align-items:center;
+}
+.hero h1{
+font-size:40px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">👨‍🍳 Cooking Academy</div>
+<div>
+<a href="https://www.shreecookingacademy.com/">Home</a>
+<a href="https://en.wikipedia.org/wiki/Cooking">About</a>
+<a href="https://www.coursera.org/courses?query=cooking">Courses</a>
+<a href="https://www.linkedin.com/in/jebarson-p-766083325/">Contact</a>
+</div>
+</nav>
+<div class="hero">
+<h1>Learn • Cook • Serve</h1>
+<p>
+Master the art of cooking with professional chefs. Explore international cuisines,
+baking techniques, healthy recipes and hands-on practical training in a modern kitchen.
+</p>
+</div>
+</header>
+<section>
+<h2>About Our Academy</h2>
+<div class="about">
+<img src="images.jpg" alt="Cooking Academy">
+<p>
+Cooking Academy offers practical cooking classes designed for beginners and aspiring chefs.
+Students learn food preparation, baking, international cuisines, food presentation and kitchen
+management through interactive sessions. Our experienced instructors provide hands-on training
+that builds confidence and prepares students for successful careers in the culinary industry.
+</p>
+</div>
+</section>
+<section>
+<h2>Popular Courses</h2>
+<div class="cards">
+<div class="card">
+<h3>🍕 Italian Cuisine</h3>
+<p>Learn pizza, pasta, lasagna and authentic Italian recipes.</p>
+</div>
+<div class="card">
+<h3>🍔 Fast Food</h3>
+<p>Prepare burgers, sandwiches, fries and delicious snacks.</p>
+</div>
+<div class="card">
+<h3>🍰 Baking & Desserts</h3>
+<p>
+Master cakes, cookies, pastries, chocolates and desserts
+using professional baking techniques.
+</p>
+</div>
+<div class="card">
+<h3>🥗 Healthy Cooking</h3>
+<p>
+Prepare nutritious meals with fresh vegetables, grains,
+proteins and balanced recipes.
+</p>
+</div>
+</div>
+</section>
+<section>
+<h2>Why Choose Our Academy?</h2>
+<div class="cards">
+<div class="card">
+<h3>👨‍🍳 Expert Chefs</h3>
+<p>
+Learn from experienced chefs with years of professional
+culinary experience.
+</p>
+</div>
+<div class="card">
+<h3>🍳 Practical Training</h3>
+<p>
+Gain hands-on experience in a modern kitchen equipped
+with professional tools.
+</p>
+</div>
+<div class="card">
+<h3>📜 Certification</h3>
+<p>
+Receive a course completion certificate to support your
+career opportunities.
+</p>
+</div>
+<div class="card">
+<h3>💼 Career Support</h3>
+<p>
+Get internship guidance and placement assistance in the
+hospitality industry.
+</p>
+</div>
+</div>
+</section>
+<section>
+<h2>Student Reviews</h2>
+<div class="card" style="width:80%;margin:auto;">
+<h3>⭐⭐⭐⭐⭐ Excellent Learning Experience</h3>
+<p>
+"The academy provided practical cooking sessions with
+friendly instructors. I improved my cooking skills and
+gained confidence in preparing international dishes."
+</p>
+</div>
+</section>
+<section style="text-align:center;line-height:2;">
+<h2>Contact Us</h2>
+<p><b>📍 Address:</b> Cooking Academy, Coimbatore</p>
+<p><b>📞 Phone:</b> +91 98765 43210</p>
+<p><b>✉ Email:</b> info@cookingacademy.com</p>
+<p><b>🕒 Working Hours:</b> Monday – Saturday | 9:00 AM – 6:00 PM</p>
+</section>
+<footer style="background:#2D2D2D;color:white;padding:25px;text-align:center;">
+<h3>👨‍🍳 Cooking Academy</h3>
+<p>Learn • Cook • Create • Inspire</p>
+<p>© 2026 Cooking Academy. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
