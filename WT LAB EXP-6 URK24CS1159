@@ -1,0 +1,199 @@
+1)
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Digital Clock - URK24CS1159</h1>
+<style>
+body
+{
+    text-align: center;
+    margin-top: 250px;
+}
+#time
+{
+    font-size: 100px;
+}
+</style>
+<span id="time"></span>
+<script>
+function display()
+{
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    document.getElementById("time").innerHTML =
+    h + ":" + m + ":" + s;
+}
+display();
+setInterval(display, 1000);
+</script>
+</body>
+</html>
+
+
+2)
+
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Dynamic Background! - URK24CS1159</h1>
+<h2>Background colour changes every 5 seconds</h2>
+</div>
+<script>
+function setBackgroundColor()
+{
+    var red =
+    Math.floor(Math.random() * 256);
+    var green =
+    Math.floor(Math.random() * 256);
+    var blue =
+    Math.floor(Math.random() * 256);
+    document.body.style.backgroundColor =
+    "rgb(" + red + "," + green + "," + blue + ")";
+}
+setBackgroundColor();
+setInterval(setBackgroundColor, 5000);
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 250px;
+    font-size: 30px;
+}
+</style>
+</body>
+</html>
+
+ 
+3)
+
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Change Font Size - URK24CS1159</h1>
+<p id="para"
+onmouseover="incSize()"
+onmouseout="decSize()">
+Move cursor over me
+</p>
+</div>
+<script>
+function incSize()
+{
+    document.getElementById("para").style.fontSize =
+    "60px";
+}
+function decSize()
+{
+    document.getElementById("para").style.fontSize =
+    "30px";
+}
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 250px;
+}
+#para
+{
+    font-size: 30px;
+}
+</style>
+</body>
+</html>
+
+
+
+4)
+<!DOCTYPE html>
+<html>
+<body>
+<div style="text-align:center; margin-top:200px;">
+<h1 style="font-size:50px;">Move the Car - URK24CS1159</h1>
+<img id="car" src="car.jpg" width="400">
+<br><br>
+<button onclick="move()" style="font-size:25px;">
+Move
+</button>
+<button onclick="stop()" style="font-size:25px;">
+Stop
+</button>
+</div>
+<script>
+var car = document.getElementById("car");
+var x = 0;
+var a;
+function move()
+{
+    x = x + 5;
+    car.style.marginLeft = x + "px";
+    a = setTimeout(move, 100);
+}
+function stop()
+{
+    clearTimeout(a);
+}
+</script>
+</body>
+</html>
+
+
+5)
+
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Student Details - URK24CS1159</h1>
+<div id="output"></div>
+</div>
+<script>
+var student =
+[
+    {
+        name: "John",
+        r_num: "123",
+        dob: "20-Apr-1995"
+    },
+    {
+        name: "Joseph",
+        r_num: "456",
+        dob: "05-Jan-1998"
+    },
+    {
+        name: "David",
+        r_num: "789",
+        dob: "10-Mar-2002"
+    }
+];
+for(var i = 0; i < student.length; i++)
+{
+    document.getElementById("output").innerHTML +=
+    "Name: " + student[i].name + "<br>";
+    document.getElementById("output").innerHTML +=
+    "Register Number: " + student[i].r_num + "<br>";
+    document.getElementById("output").innerHTML +=
+    "Date of Birth: " + student[i].dob + "<br><br>";
+}
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 35px;
+}
+h1
+{
+    font-size: 60px;
+}
+</style>
+</body>
+</html>
+
