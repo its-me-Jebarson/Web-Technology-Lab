@@ -1,0 +1,334 @@
+1)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Finder</title>
+<style>
+body{
+    font-family:Arial;
+    text-align:center;
+    padding:100px;
+    background:#f2f2f2;
+}
+h1{font-size:35px}
+input{
+    width:500px;
+    padding:15px;
+    font-size:18px;
+}
+button{
+    padding:15px 25px;
+    font-size:18px;
+    cursor:pointer;
+}
+#result{
+    font-size:22px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+<h1>Shortest and Longest Word - URK24CS1159</h1>
+<input id="text" placeholder="Enter a sentence">
+<button onclick="find()">Find</button>
+<p id="result"></p>
+<script>
+function find(){
+    let a=text.value.trim().split(" ");
+    let s=a[0],l=a[0];
+
+    for(let w of a){
+        if(w.length<s.length)s=w;
+        if(w.length>l.length)l=w;
+    }
+
+    result.innerHTML="Shortest: "+s+"<br>Longest: "+l;
+}
+</script>
+</body>
+</html>
+
+2)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            padding: 80px;
+            background: #f2f2f2;
+        }
+        h1 {
+            font-size: 35px;
+        }
+        input {
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            font-size: 18px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        #result {
+            font-size: 22px;
+            margin: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator - URK24CS1159</h1>
+    <input id="w" type="number" placeholder="Weight (kg)">
+    <br>
+    <input id="h" type="number" placeholder="Height (m)">
+    <br>
+    <button onclick="bmi()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function bmi() {
+            let b = w.value / (h.value * h.value);
+            result.innerHTML = "BMI: " + b.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+
+      
+3)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fruit Farm</title>
+</head>
+<body>
+<div style="text-align:center; margin-top:100px;">
+<h1 style="font-size:40px;">
+Fruit Farm - URK24CS1159
+</h1>
+Rows:
+<input type="text" id="rows">
+Columns:
+<input type="text" id="columns">
+<br><br>
+<button onclick="grow()" style="font-size:25px;">
+Plant Garden
+</button>
+<br><br>
+<div id="garden"></div>
+</div>
+<script>
+function grow()
+{
+    let r = rows.value;
+    let c = columns.value;
+    let garden = "";
+    for(let i = 0; i < r * c; i++)
+    {
+        let fruit =
+        Math.random() < 0.5
+        ? "C:\\Users\\jebar\\OneDrive\\Documents\\WT LAB Files\\apple.jpg"
+        : "C:\\Users\\jebar\\OneDrive\\Documents\\WT LAB Files\\orange.jpg";
+        garden +=
+        "<img src='" + fruit +
+        "' width='120' height='120'>";
+        if((i + 1) % c == 0)
+        {
+            garden += "<br>";
+        }
+    }
+    document.getElementById("garden").innerHTML =
+    garden;
+}
+</script>
+</body>
+</html>
+
+  
+4)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 25px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        input, select, button {
+            font-size: 25px;
+            padding: 12px;
+            margin: 10px;
+        }
+        button {
+            cursor: pointer;
+            padding: 15px 35px;
+        }
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1> Currency Converter - URK24CS1159</h1>
+<input type="text" id="data" placeholder="Enter Amount">
+<select id="from">
+    <option value="INR">Indian Rupee</option>
+    <option value="USD">US Dollar</option>
+</select>
+<b>To</b>
+<select id="to">
+    <option value="USD">US Dollar</option>
+    <option value="INR">Indian Rupee</option>
+</select>
+<br><br>
+<button onclick="convert()">Calculate</button>
+<p>Answer: <span id="answer"></span></p>
+<script>
+function convert() {
+    let n = Number(data.value);
+    let f = from.value;
+    let t = to.value;
+    let ans;
+    if (f == "INR" && t == "USD")
+        ans = n * 0.015;
+    else if (f == "USD" && t == "INR")
+        ans = n * 67.12;
+    else
+        ans = n;
+    answer.innerHTML = ans.toFixed(2);
+}
+</script>
+</body>
+</html>
+
+  
+5)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coin Flip</title>
+</head>
+<body>
+<div style="text-align:center; margin-top:150px;">
+<h1 style="font-size:50px;">
+Heads or Tails?
+</h1>
+<img src="heads.jpg"
+id="coin"
+width="200"
+height="200">
+<br><br>
+<button id="flip"
+style="font-size:25px;">
+Flip!
+</button>
+<p style="font-size:25px;">
+Heads Total:
+<span id="num_heads">0</span>
+<br>
+Tails Total:
+<span id="num_tails">0</span>
+</p>
+</div>
+<script>
+var heads = 0;
+var tails = 0;
+document.getElementById("flip")
+.addEventListener("click", flipFunction);
+function flipFunction()
+{
+    var random =
+    Math.floor(Math.random() * 2);
+    if(random == 0)
+    {
+        document.getElementById("coin").src =
+        "heads.jpg";
+        heads++;
+        document.getElementById("num_heads").innerHTML =
+        heads;
+    }
+    else
+    {
+        document.getElementById("coin").src =
+        "tails.jpg";
+        tails++;
+        document.getElementById("num_tails").innerHTML =
+        tails;
+    }
+}
+</script>
+</body>
+</html>
+
+  
+6)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Cake Order</title>
+<style>
+body{
+    font-family:Arial;
+    text-align:center;
+    font-size:22px;
+    margin-top:80px;
+}
+fieldset{
+    width:600px;
+    margin:auto;
+}
+input{
+    padding:8px;
+    font-size:18px;
+    margin:8px;
+}
+button{
+    padding:10px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Birthday Cake Order Form - URK24CS1159</h1>
+
+<fieldset>
+Number of 1/2kg Cakes <input id="small" type="number"><br>
+Number of 1kg Cakes <input id="medium" type="number"><br>
+Number of 2kg Cakes <input id="large" type="number"><br>
+
+Tip:
+<input type="radio" name="tip" value="10">10%
+<input type="radio" name="tip" value="15" checked>15%
+<input type="radio" name="tip" value="20">20%<br>
+
+<button id="submit">Calculate Order</button>
+</fieldset>
+
+<p>Cost of order: <span id="price"></span></p>
+
+<script>
+submit.onclick=function(){
+    let cost=small.value*100+medium.value*200+large.value*400;
+    let tip=document.querySelector('input[name="tip"]:checked').value;
+    price.innerHTML="Rs."+(cost*1.09*(1+tip/100)).toFixed(2);
+}
+</script>
+
+</body>
+</html>
