@@ -1,0 +1,698 @@
+1. Budget Calculator
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Calculator - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #eee;
+        }
+        .box {
+            width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgb(253, 251, 251);
+        }
+        h2 {
+            background: rgb(63, 0, 251);
+            color: white;
+            padding: 8px;
+        }
+        input {
+            width: 55px;
+            margin: 8px;
+            padding: 5px;
+        }
+        button {
+            background: rgb(255, 0, 0);
+            color: white;
+            padding: 8px;
+            border: 0;
+        }
+        #result div {
+            display: inline-block;
+            color: white;
+            padding: 12px;
+            margin: 15px 3px;
+        }
+        .r {
+            background: blue;
+        }
+        .a {
+            background: green;
+        }
+        .e {
+            background: rgb(224, 95, 175);
+        }
+        .s {
+            background: #f08;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>1. Budget Calculator App - URK24CS1159</h2>
+        <b>Enter Amount that you want to Manage</b><br>
+        <input id="amt" value="15000">
+        <p>
+            <b>How would you like to divide your money?</b>
+        </p>
+        Rent % <input id="r" value="50">
+        Accessories % <input id="a" value="20">
+        Emergency % <input id="e" value="20">
+        Saving % <input id="s" value="10">
+        <br>
+        <button id="cal">Evaluate My Money</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        $("#cal").click(function() {
+            let x = +$("#amt").val();
+            let r = +$("#r").val();
+            let a = +$("#a").val();
+            let e = +$("#e").val();
+            let s = +$("#s").val();
+            if (r + a + e + s != 100) {
+                alert("Percentage must be 100%");
+                return;
+            }
+            $("#result").html(
+                "<div class='r'>Room Rent<br>₹" +
+                x * r / 100 + "</div>" +
+                "<div class='a'>Accessories<br>₹" +
+                x * a / 100 + "</div>" +
+                "<div class='e'>Emergency<br>₹" +
+                x * e / 100 + "</div>" +
+                "<div class='s'>Saving<br>₹" +
+                x * s / 100 + "</div>"
+            );
+        });
+    </script>
+</body>
+</html>
+
+
+2. Cake Shop
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake Shop - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #fff8f0;
+        }
+        .shop {
+            width: 550px;
+            margin: 15px auto;
+        }
+        h2 {
+            background: #6b3e26;
+            color: #fffaf3;
+            padding: 8px;
+            margin: 0 0 10px;
+        }
+        .cakes {
+            display: flex;
+            justify-content: space-around;
+        }
+        .cake img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+        }
+        .cake {
+            font-size: 11px;
+        }
+        h1 {
+            color: #b4536b;
+            font-size: 22px;
+            margin: 12px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-left: 55px;
+            color: #7c3f50;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        input {
+            width: 85%;
+            padding: 7px;
+            margin: 3px;
+            border: 1px solid #c9a99a;
+        }
+        button {
+            background: #a85565;
+            color: #fffaf3;
+            border: none;
+            padding: 9px 65px;
+            margin: 8px;
+            cursor: pointer;
+        }
+        hr {
+            border: 1px solid #d4a373;
+        }
+        #bill {
+            color: #2f855a;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #total {
+            color: #9f1239;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="shop">
+    <h2>2. CAKE SHOP - URK24CS1159</h2>
+    <div class="cakes">
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Rainbow Cake.jpg">
+            <br>
+            Color Cake - Rs. 300
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Brown cake.jpg">
+            <br>
+            Brown Cake - Rs. 200
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Milky Cake.jpg">
+            <br>
+            Milky Cake - Rs. 250
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Black Forest cake.jpg">
+            <br>
+            Black Forest Cake - Rs. 350
+        </div>
+    </div>
+    <h1>Order Cake</h1>
+    <label>Color Cake(Quantity)</label>
+    <input type="number" id="c1" value="2">
+    <label>Brown Cake(Quantity)</label>
+    <input type="number" id="c2" value="1">
+    <label>Milky Cake(Quantity)</label>
+    <input type="number" id="c3" value="2">
+    <label>Black Forest Cake(Quantity)</label>
+    <input type="number" id="c4" value="1">
+    <br>
+    <button id="order">Place Order</button>
+    <hr>
+    <div id="bill">Purchase Order Bill!!!</div>
+    <h3>
+        Total Price:
+        <span id="total">Rs. 0</span>
+    </h3>
+</div>
+<script>
+    $(function() {
+        $("#order").click(function() {
+            let total =
+                $("#c1").val() * 300 +
+                $("#c2").val() * 200 +
+                $("#c3").val() * 250 +
+                $("#c4").val() * 350;
+            $("#total").text("Rs. " + total);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+3. Car Workshop
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Workshop - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        #car {
+            width: 145px;
+            height: 30px;
+            background: #00c6ff;
+            margin: 65px auto;
+            position: relative;
+        }
+        #glass {
+            width: 62px;
+            height: 38px;
+            background: #7dd3fc;
+            position: absolute;
+            left: 42px;
+            top: -38px;
+        }
+        .tyre {
+            width: 43px;
+            height: 43px;
+            background: #1e293b;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+        .left {
+            left: 12px;
+        }
+        .right {
+            right: 12px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 55px 10px;
+            background: #0f172a;
+            color: #67e8f9;
+            border: 1px solid #38bdf8;
+            border-radius: 3px;
+        }
+    </style>    
+</head>
+<body>
+    <h2>3. Car Workshop - URK24CS1159</h2>
+    <div id="car">
+        <div id="glass"></div>
+        <div class="tyre left"></div>
+        <div class="tyre right"></div>
+    </div>
+    <button id="carColor">Change Car Color</button>
+    <button id="glassColor">Change Body Color</button>
+    <button id="increase">Tyre Size Increase</button>
+    <button id="decrease">Tyre Size Decrease</button>
+    <button id="reset">Reset</button>
+    <script>
+        $(function () {
+            $("#carColor").click(function () {
+                $("#car").css("background", "red");
+            });
+
+            $("#glassColor").click(function () {
+                $("#glass").css("background", "black");
+            });
+            $("#increase").click(function () {
+                $(".tyre").animate({
+                    width: "55px",
+                    height: "55px"
+                });
+            });
+            $("#decrease").click(function () {
+                $(".tyre").animate({
+                    width: "35px",
+                    height: "35px"
+                });
+            });
+            $("#reset").click(function () {
+                $("#car").css("background", "#65a0ed");
+                $("#glass").css("background", "blue");
+                $(".tyre").animate({
+                    width: "43px",
+                    height: "43px"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+4. Product Effects
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Effects - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #fff7ed;
+        }
+        #product {
+            width: 350px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fffaf5;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #d6b89c;
+        }
+        button {
+            padding: 9px 14px;
+            margin: 5px;
+            border: 0;
+            border-radius: 5px;
+            background: #9a3412;
+            color: white;
+        }
+        #msg {
+            color: #15803d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>4. Product Details - URK24CS1159</h2>
+    <div id="product">
+        <h2>Laptop Pro</h2>
+        <p>Price : ₹65,000</p>
+        <p>Category : Electronics</p>
+        <p>Stock Status : Available</p>
+        <p>Powerful laptop for professional use.</p>
+    </div>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="fade">Fade</button>
+    <button id="slide">Slide</button>
+    <button id="animate">Animate</button>
+    <button id="stop">Stop Animation</button>
+    <button id="callback">Callback</button>
+    <button id="chain">Chaining</button>
+    <p id="msg"></p>
+    <script>
+        $(function () {
+            $("#show").click(function () {
+                $("#product").show();
+            });
+            $("#hide").click(function () {
+                $("#product").hide();
+            });
+            $("#fade").click(function () {
+                $("#product").fadeToggle(600);
+            });
+            $("#slide").click(function () {
+                $("#product").slideToggle(600);
+            });
+            $("#animate").click(function () {
+                $("#product").animate({
+                    width: "450px",
+                    marginLeft: "100px"
+                }, 1000);
+            });
+            $("#stop").click(function () {
+                $("#product").stop();
+            });
+            $("#callback").click(function () {
+                $("#msg").text("");
+                $("#product").fadeOut(500, function () {
+                    $("#msg").text("Animation completed successfully");
+                    $("#product").fadeIn(500);
+                });
+            });
+            $("#chain").click(function () {
+                $("#product")
+                    .slideUp(500)
+                    .slideDown(500)
+                    .fadeOut(500)
+                    .fadeIn(500);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+5. Employee Management
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <style> 
+        body { 
+            font-family: Arial; 
+            background: #ecfdf5; 
+            text-align: center; 
+        } 
+        .box { 
+            width: 650px; 
+            margin: 30px auto; 
+            padding: 25px; 
+            background: #fffdf5; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px #a7b8ad; 
+        } 
+        input { 
+            padding: 8px; 
+            margin: 5px; 
+            width: 130px; 
+        } 
+        button { 
+            padding: 8px 14px; 
+            margin: 5px; 
+            border: 0; 
+            border-radius: 5px; 
+            background: #065f46; 
+            color: white; 
+        } 
+        table { 
+            width: 100%; 
+            margin-top: 20px; 
+            border-collapse: collapse; 
+        } 
+        th, td { 
+            padding: 10px; 
+            border: 1px solid #b7c9bf; 
+        } 
+        th { 
+            background: #064e3b; 
+            color: white; 
+        } 
+        .selected { 
+            background: #a8e1a6; 
+        } 
+        #status { 
+            padding: 8px; 
+            font-weight: bold; 
+            color: #047857; 
+        } 
+    </style> 
+</head> 
+<body> 
+<div class="box"> 
+    <h2>5. Employee Management Dashboard - URK24CS1159</h2> 
+    <input id="id" placeholder="Employee ID"> 
+    <input id="name" placeholder="Employee Name"> 
+    <input id="dept" placeholder="Department"> 
+    <br> 
+    <button id="add">Add Employee</button> 
+    <button id="update">Update</button> 
+    <button id="remove">Remove</button> 
+    <button id="dimension">Show Table Dimensions</button> 
+    <table id="employees"> 
+        <tr> 
+            <th>ID</th> 
+            <th>Name</th> 
+            <th>Department</th> 
+            <th>Action</th> 
+        </tr> 
+        <tr> 
+            <td>101</td> 
+            <td>Riya</td> 
+            <td>HR</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+        <tr> 
+            <td>102</td> 
+            <td>Arjun</td> 
+            <td>IT</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+        <tr> 
+            <td>103</td> 
+            <td>Meera</td> 
+            <td>Finance</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+    </table> 
+    <p id="status"></p> 
+</div> 
+<script> 
+$(function () { 
+    $("#employees").on("click", ".select", function () { 
+        let row = $(this).closest("tr"); 
+        $(".selected").removeClass("selected"); 
+        row.addClass("selected"); 
+        $("#id").val(row.children().eq(0).text()); 
+        $("#name").val(row.children().eq(1).text()); 
+        $("#dept").val(row.children().eq(2).text()); 
+        $("#status").text("Selected employee details loaded."); 
+    }); 
+    $("#add").click(function () { 
+        $("#employees").append( 
+            "<tr><td>" + $("#id").val() + 
+            "</td><td>" + $("#name").val() + 
+            "</td><td>" + $("#dept").val() + 
+            "</td><td><button class='select'>Select</button></td></tr>" 
+        ); 
+        $("#status") 
+            .text("Employee added successfully.") 
+            .css("background", "#d1fae5"); 
+    }); 
+    $("#update").click(function () { 
+        let row = $(".selected"); 
+        row.children().eq(0).text($("#id").val()); 
+        row.children().eq(1).text($("#name").val()); 
+        row.children().eq(2).text($("#dept").val()); 
+        $("#status") 
+            .text("Employee updated successfully.") 
+            .css("background", "#fef3c7"); 
+    }); 
+    $("#remove").click(function () { 
+        $(".selected").remove(); 
+        $("#status") 
+            .text("Employee removed successfully.") 
+            .css("background", "#fee2e2"); 
+    }); 
+    $("#dimension").click(function () { 
+        $("#status").text( 
+            "Width: " + $("#employees").width() + 
+            "px | Height: " + $("#employees").height() + "px" 
+        ); 
+    }); 
+}); 
+</script> 
+</body> 
+</html>
+
+
+6. Organization Explorer
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organization Explorer - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <style> 
+        body { 
+            font-family: Arial; 
+            background: #f3e8ff; 
+            text-align: center; 
+        } 
+        .project { 
+            width: 600px; 
+            margin: 25px auto; 
+            padding: 20px; 
+            background: #fff7ff; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px #c4b5fd; 
+        } 
+        .team { 
+            padding: 12px; 
+            margin: 12px; 
+            background: #ede9fe; 
+            border-radius: 8px; 
+        } 
+        .employee { 
+            display: inline-block; 
+            padding: 8px; 
+            margin: 4px; 
+            background: #f5f3ff; 
+            border: 1px solid #a78bfa; 
+            border-radius: 5px; 
+        } 
+        .active { 
+            background: #a7f3d0 !important; 
+            border: 2px solid #059669; 
+        } 
+        button { 
+            padding: 9px 12px; 
+            margin: 5px; 
+            border: 0; 
+            border-radius: 5px; 
+            background: #6d28d9; 
+            color: #ffffff; 
+        } 
+        #result { 
+            color: #7c3aed; 
+            font-weight: bold; 
+        } 
+    </style> 
+</head> 
+<body> 
+<h2>5. Employee Organization Explorer - URK24CS1159</h2> 
+<div class="project" id="project"> 
+    <h2>Project Alpha</h2> 
+    <div class="team"> 
+        <h3>Development Team</h3> 
+        <span class="employee">Arun - Developer</span> 
+        <span class="employee senior" id="kavya"> 
+            Kavya - Senior Developer 
+        </span> 
+        <span class="employee">Rahul - Developer</span> 
+    </div> 
+    <div class="team"> 
+        <h3>Testing Team</h3> 
+        <span class="employee">Meena - Tester</span> 
+        <span class="employee senior">Priya - Senior Tester</span> 
+        <span class="employee">Karthik - Tester</span> 
+    </div> 
+</div> 
+<button id="select">Select Employee</button> 
+<button id="parent">Show Parent Team</button> 
+<button id="ancestor">Show All Ancestors</button> 
+<button id="projectBtn">Show Project Employees</button> 
+<button id="mates">Show Teammates</button> 
+<button id="senior">Show Senior Employees</button> 
+<button id="reset">Reset</button> 
+<p id="result"></p> 
+<script> 
+$(function () { 
+    $("#select").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#kavya").addClass("active"); 
+        $("#result").text("Selected Employee : Kavya"); 
+    }); 
+    $("#parent").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#kavya").parent().addClass("active"); 
+        $("#result").text("Parent Team : Development Team"); 
+    }); 
+    $("#ancestor").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#kavya").parents(".team").addClass("active"); 
+        $("#kavya").closest(".project").addClass("active"); 
+        $("#result").text("Project : Project Alpha"); 
+    }); 
+    $("#projectBtn").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#project").children(".team").addClass("active"); 
+        $("#project").find(".employee").addClass("active"); 
+        $("#result").text("All Project Employees Highlighted"); 
+    }); 
+    $("#mates").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#kavya").siblings(".employee").addClass("active"); 
+        $("#result").text("Teammates : Arun, Rahul"); 
+    }); 
+    $("#senior").click(function () { 
+        $(".active").removeClass("active"); 
+        $(".employee").filter(".senior").addClass("active"); 
+        $("#result").text("Senior Employees Highlighted"); 
+    }); 
+    $("#reset").click(function () { 
+        $(".active").removeClass("active"); 
+        $("#result").text(""); 
+    }); 
+}); 
+</script> 
+</body> 
+</html>
