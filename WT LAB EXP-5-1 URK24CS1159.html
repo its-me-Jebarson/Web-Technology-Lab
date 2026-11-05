@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Finder</title>
+<style>
+body{
+    font-family:Arial;
+    text-align:center;
+    padding:100px;
+    background:#f2f2f2;
+}
+h1{font-size:35px}
+input{
+    width:500px;
+    padding:15px;
+    font-size:18px;
+}
+button{
+    padding:15px 25px;
+    font-size:18px;
+    cursor:pointer;
+}
+#result{
+    font-size:22px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+<h1>Shortest and Longest Word - URK24CS1159</h1>
+<input id="text" placeholder="Enter a sentence">
+<button onclick="find()">Find</button>
+<p id="result"></p>
+<script>
+function find(){
+    let a=text.value.trim().split(" ");
+    let s=a[0],l=a[0];
+
+    for(let w of a){
+        if(w.length<s.length)s=w;
+        if(w.length>l.length)l=w;
+    }
+
+    result.innerHTML="Shortest: "+s+"<br>Longest: "+l;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Effects - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #fff7ed;
+        }
+        #product {
+            width: 350px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fffaf5;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #d6b89c;
+        }
+        button {
+            padding: 9px 14px;
+            margin: 5px;
+            border: 0;
+            border-radius: 5px;
+            background: #9a3412;
+            color: white;
+        }
+        #msg {
+            color: #15803d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>4. Product Details - URK24CS1159</h2>
+    <div id="product">
+        <h2>Laptop Pro</h2>
+        <p>Price : ₹65,000</p>
+        <p>Category : Electronics</p>
+        <p>Stock Status : Available</p>
+        <p>Powerful laptop for professional use.</p>
+    </div>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="fade">Fade</button>
+    <button id="slide">Slide</button>
+    <button id="animate">Animate</button>
+    <button id="stop">Stop Animation</button>
+    <button id="callback">Callback</button>
+    <button id="chain">Chaining</button>
+    <p id="msg"></p>
+    <script>
+        $(function () {
+            $("#show").click(function () {
+                $("#product").show();
+            });
+            $("#hide").click(function () {
+                $("#product").hide();
+            });
+            $("#fade").click(function () {
+                $("#product").fadeToggle(600);
+            });
+            $("#slide").click(function () {
+                $("#product").slideToggle(600);
+            });
+            $("#animate").click(function () {
+                $("#product").animate({
+                    width: "450px",
+                    marginLeft: "100px"
+                }, 1000);
+            });
+            $("#stop").click(function () {
+                $("#product").stop();
+            });
+            $("#callback").click(function () {
+                $("#msg").text("");
+                $("#product").fadeOut(500, function () {
+                    $("#msg").text("Animation completed successfully");
+                    $("#product").fadeIn(500);
+                });
+            });
+            $("#chain").click(function () {
+                $("#product")
+                    .slideUp(500)
+                    .slideDown(500)
+                    .fadeOut(500)
+                    .fadeIn(500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake Shop - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #fff8f0;
+        }
+        .shop {
+            width: 550px;
+            margin: 15px auto;
+        }
+        h2 {
+            background: #6b3e26;
+            color: #fffaf3;
+            padding: 8px;
+            margin: 0 0 10px;
+        }
+        .cakes {
+            display: flex;
+            justify-content: space-around;
+        }
+        .cake img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+        }
+        .cake {
+            font-size: 11px;
+        }
+        h1 {
+            color: #b4536b;
+            font-size: 22px;
+            margin: 12px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-left: 55px;
+            color: #7c3f50;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        input {
+            width: 85%;
+            padding: 7px;
+            margin: 3px;
+            border: 1px solid #c9a99a;
+        }
+        button {
+            background: #a85565;
+            color: #fffaf3;
+            border: none;
+            padding: 9px 65px;
+            margin: 8px;
+            cursor: pointer;
+        }
+        hr {
+            border: 1px solid #d4a373;
+        }
+        #bill {
+            color: #2f855a;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #total {
+            color: #9f1239;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="shop">
+    <h2>2. CAKE SHOP - URK24CS1159</h2>
+    <div class="cakes">
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Rainbow Cake.jpg">
+            <br>
+            Color Cake - Rs. 300
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Brown cake.jpg">
+            <br>
+            Brown Cake - Rs. 200
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Milky Cake.jpg">
+            <br>
+            Milky Cake - Rs. 250
+        </div>
+        <div class="cake">
+            <img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Black Forest cake.jpg">
+            <br>
+            Black Forest Cake - Rs. 350
+        </div>
+    </div>
+    <h1>Order Cake</h1>
+    <label>Color Cake(Quantity)</label>
+    <input type="number" id="c1" value="2">
+    <label>Brown Cake(Quantity)</label>
+    <input type="number" id="c2" value="1">
+    <label>Milky Cake(Quantity)</label>
+    <input type="number" id="c3" value="2">
+    <label>Black Forest Cake(Quantity)</label>
+    <input type="number" id="c4" value="1">
+    <br>
+    <button id="order">Place Order</button>
+    <hr>
+    <div id="bill">Purchase Order Bill!!!</div>
+    <h3>
+        Total Price:
+        <span id="total">Rs. 0</span>
+    </h3>
+</div>
+<script>
+    $(function() {
+        $("#order").click(function() {
+            let total =
+                $("#c1").val() * 300 +
+                $("#c2").val() * 200 +
+                $("#c3").val() * 250 +
+                $("#c4").val() * 350;
+            $("#total").text("Rs. " + total);
+        });
+    });
+</script>
+</body>
+</html>

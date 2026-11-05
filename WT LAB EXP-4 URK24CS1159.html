@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PawCare Pet Center</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:#eef5ff;
+}
+/* Header */
+header{
+background:linear-gradient(to right,#2563eb,#10b981);
+padding:15px;
+text-align:center;
+color:white;
+}
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+nav a:hover{
+color:rgb(255, 0, 0);
+}
+/* Hero */
+.hero{
+height:260px;
+background:
+linear-gradient(rgba(139, 222, 145, 0.989),rgb(197, 207, 199)),
+url("images/pet.jpg");
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+.hero div{
+background:rgba(255,255,255,.2);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 10px rgb(39, 16, 16);
+}
+.hero button{
+margin-top:10px;
+padding:10px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:20px;
+cursor:pointer;
+}
+.hero button:hover{
+background:#10b981;
+}
+/* Services */
+h2{
+text-align:center;
+margin:25px;
+color:#2563eb;
+}
+.services{
+display:flex;
+justify-content:space-around;
+padding:20px;
+}
+.card{
+width:30%;
+background:white;
+padding:15px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 0 10px gray;
+border:8px solid transparent;
+border-image:url("images/border.png") 30 round;
+}
+.card:hover{
+transform:scale(1.03);
+}
+.card img{
+width:100%;
+height:150px;
+border-radius:10px;
+opacity:.8;
+}
+.card img:hover{
+opacity:1;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🐾 PawCare Pet Center</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Login</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+<div class="hero">
+<div>
+<h2>Premium Pet Care</h2>
+<p>Love • Care • Happiness</p>
+<button>Book Now</button>
+</div>
+</div>
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">
+<img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\dog.jpg">
+<h3>Dog Grooming</h3>
+<p>Bath & Hair Cut</p>
+</div>
+<div class="card">
+<img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\hospital.jpg">
+<h3>Veterinary</h3>
+<p>Health Check-up</p>
+</div>
+<div class="card">
+<img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\Boarding.jpg">
+<h3>Boarding</h3>
+<p>Safe Pet Stay</p>
+</div>
+</div>
+<style>
+/* Login & Sign Up */
+.account{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:20px;
+}
+.box{
+width:280px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 10px gray;
+}
+.box h3{
+text-align:center;
+margin-bottom:15px;
+color:#2563eb;
+}
+.box input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:2px solid #ccc;
+border-radius:8px;
+}
+.box input:focus{
+border:2px solid red;
+background:#eef;
+outline:none;
+}
+.box input:required{
+border-color:#2563eb;
+}
+.box input[type=email]:valid{
+color:blue;
+}
+.box input[type=email]:invalid{
+color:red;
+}
+.box button{
+width:100%;
+padding:10px;
+margin-top:10px;
+background:linear-gradient(to right,#2563eb,#10b981);
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+.box button:hover{
+opacity:.9;
+}
+/* Package Table */
+table{
+width:70%;
+margin:30px auto;
+border-collapse:collapse;
+background:white;
+box-shadow:0 0 10px gray;
+}
+th,td{
+padding:10px;
+border:1px solid #ddd;
+text-align:center;
+}
+th{
+background:#2563eb;
+color:white;
+}
+tr:nth-child(odd){
+background:#f5f5f5;
+}
+tr:nth-child(even){
+background:#dff7ff;
+}
+tr:hover{
+background:#fff2a8;
+}
+/* Footer */
+footer{
+margin-top:30px;
+padding:15px;
+text-align:center;
+color:white;
+background:linear-gradient(to right,#2563eb,#10b981);
+}
+</style>
+<h2>Member Login</h2>
+<div class="account">
+<div class="box">
+<h3>Sign In</h3>
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+<button>Sign In</button>
+</div>
+<div class="box">
+<h3>Sign Up</h3>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+<button>Create Account</button>
+</div>
+</div>
+<h2>Pet Care Packages</h2>
+<table>
+<tr>
+<th>Package</th>
+<th>Price</th>
+</tr>
+<tr>
+<td>Basic Care</td>
+<td>₹500</td>
+</tr>
+<tr>
+<td>Premium Care</td>
+<td>₹1500</td>
+</tr>
+<tr>
+<td>VIP Care</td> 
+<td>₹2500</td>
+</tr>
+</table>
+<footer>
+<p><b>🐾 PawCare Pet Center</b></p>
+<p>Email: support@pawcare.com | Phone: +91 98765 43210</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+</body>
+</html>

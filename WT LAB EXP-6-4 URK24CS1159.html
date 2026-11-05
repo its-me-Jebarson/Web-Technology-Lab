@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="text-align:center; margin-top:200px;">
+<h1 style="font-size:50px;">Move the Car - URK24CS1159</h1>
+<img id="car" src="car.jpg" width="400">
+<br><br>
+<button onclick="move()" style="font-size:25px;">
+Move
+</button>
+<button onclick="stop()" style="font-size:25px;">
+Stop
+</button>
+</div>
+<script>
+var car = document.getElementById("car");
+var x = 0;
+var a;
+function move()
+{
+    x = x + 5;
+    car.style.marginLeft = x + "px";
+    a = setTimeout(move, 100);
+}
+function stop()
+{
+    clearTimeout(a);
+}
+</script>
+</body>
+</html>

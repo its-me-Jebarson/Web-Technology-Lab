@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            padding: 80px;
+            background: #f2f2f2;
+        }
+        h1 {
+            font-size: 35px;
+        }
+        input {
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            font-size: 18px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        #result {
+            font-size: 22px;
+            margin: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator - URK24CS1159</h1>
+    <input id="w" type="number" placeholder="Weight (kg)">
+    <br>
+    <input id="h" type="number" placeholder="Height (m)">
+    <br>
+    <button onclick="bmi()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function bmi() {
+            let b = w.value / (h.value * h.value);
+            result.innerHTML = "BMI: " + b.toFixed(2);
+        }
+    </script>
+</body>
+</html>

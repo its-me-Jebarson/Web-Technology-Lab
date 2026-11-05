@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Change Font Size - URK24CS1159</h1>
+<p id="para"
+onmouseover="incSize()"
+onmouseout="decSize()">
+Move cursor over me
+</p>
+</div>
+<script>
+function incSize()
+{
+    document.getElementById("para").style.fontSize =
+    "60px";
+}
+function decSize()
+{
+    document.getElementById("para").style.fontSize =
+    "30px";
+}
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 250px;
+}
+#para
+{
+    font-size: 30px;
+}
+</style>
+</body>
+</html>

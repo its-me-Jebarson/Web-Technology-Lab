@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Workshop - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        #car {
+            width: 145px;
+            height: 30px;
+            background: #00c6ff;
+            margin: 65px auto;
+            position: relative;
+        }
+        #glass {
+            width: 62px;
+            height: 38px;
+            background: #7dd3fc;
+            position: absolute;
+            left: 42px;
+            top: -38px;
+        }
+        .tyre {
+            width: 43px;
+            height: 43px;
+            background: #1e293b;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+        .left {
+            left: 12px;
+        }
+        .right {
+            right: 12px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 55px 10px;
+            background: #0f172a;
+            color: #67e8f9;
+            border: 1px solid #38bdf8;
+            border-radius: 3px;
+        }
+    </style>    
+</head>
+<body>
+    <h2>3. Car Workshop - URK24CS1159</h2>
+    <div id="car">
+        <div id="glass"></div>
+        <div class="tyre left"></div>
+        <div class="tyre right"></div>
+    </div>
+    <button id="carColor">Change Car Color</button>
+    <button id="glassColor">Change Body Color</button>
+    <button id="increase">Tyre Size Increase</button>
+    <button id="decrease">Tyre Size Decrease</button>
+    <button id="reset">Reset</button>
+    <script>
+        $(function () {
+            $("#carColor").click(function () {
+                $("#car").css("background", "red");
+            });
+
+            $("#glassColor").click(function () {
+                $("#glass").css("background", "black");
+            });
+            $("#increase").click(function () {
+                $(".tyre").animate({
+                    width: "55px",
+                    height: "55px"
+                });
+            });
+            $("#decrease").click(function () {
+                $(".tyre").animate({
+                    width: "35px",
+                    height: "35px"
+                });
+            });
+            $("#reset").click(function () {
+                $("#car").css("background", "#65a0ed");
+                $("#glass").css("background", "blue");
+                $(".tyre").animate({
+                    width: "43px",
+                    height: "43px"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Form and Media Elements</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+font-family:Arial,sans-serif;
+background:#EAF4FF;
+}
+.container{
+width:1100px;
+margin:20px auto;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px gray;
+}
+.header{
+background:#1565C0;
+color:white;
+display:flex;
+align-items:center;
+padding:20px;
+}
+.header img{
+width:160px;
+height:160px;
+border-radius:50%;
+border:4px solid white;
+}
+.header h1{
+flex:1;
+text-align:center;
+font-size:40px;
+}
+nav{
+background:#BBDEFB;
+display:flex;
+align-items:center;
+padding:15px;
+}
+nav a{
+text-decoration:none;
+color:#0D47A1;
+font-weight:bold;
+margin-right:70px;
+}
+nav input{
+margin-left:auto;
+width:250px;
+padding:8px;
+border-radius:5px;
+border:1px solid #1565C0;
+}
+.top{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#F5FAFF;
+}
+.skills{
+width:30%;
+}
+.skills h2{
+color:#1565C0;
+margin-bottom:15px;
+}
+.skills p{
+margin-top:15px;
+font-weight:bold;
+}
+progress{
+width:230px;
+height:20px;
+}
+.video{
+width:65%;
+text-align:center;
+}
+.video h2{
+color:#1565C0;
+margin-bottom:15px;
+}
+video{
+width:600px;
+height:320px;
+border:3px solid #1565C0;
+border-radius:8px;
+}
+audio{
+width:500px;
+margin-top:20px;
+}
+.form-container{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#F8FCFF;
+}
+fieldset{
+width:48%;
+padding:15px;
+border:2px solid #1565C0;
+border-radius:8px;
+}
+legend{
+font-size:22px;
+font-weight:bold;
+color:#1565C0;
+}
+input,
+textarea,
+select{
+width:100%;
+padding:8px;
+margin:6px 0;
+}
+input[type=radio],
+input[type=checkbox]{
+width:auto;
+}
+.bottom{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#F5FAFF;
+}
+footer{
+background:#1565C0;
+color:white;
+text-align:center;
+padding:15px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<img src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\jebarson.jpeg">
+<h1>Jebarson P</h1>
+</div>
+<nav>
+<a href="https://www.linkedin.com/in/jebarson-p-766083325/">Profile</a>
+<a href="https://www.karunya.edu/">Academics</a>
+<a href="https://www.netacad.com/profile?tab=badges">Achievements</a>
+<a href="https://en.wikipedia.org/wiki/Friends">Friends</a>
+<a href="https://www.linkedin.com/in/jebarson-p-766083325/">Info</a>
+<input type="search" placeholder="Search">
+</nav>
+<div class="top">
+<div class="skills">
+<h2>Skills</h2>
+<p>Photoshop</p>
+<progress value="90" max="100"></progress>
+<p>Java</p>
+<progress value="85" max="100"></progress>
+<p>C++</p>
+<progress value="75" max="100"></progress>
+<p>PHP</p>
+<progress value="70" max="100"></progress>
+<p>JavaScript</p>
+<progress value="80" max="100"></progress>
+</div>
+<div class="video">
+<h2>Video & Audio</h2>
+<video controls>
+<source src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\video.mp4" type="video/mp4">
+</video>
+<br><br>
+<audio controls>
+<source src="C:\Users\jebar\OneDrive\Documents\WT LAB Files\audio.mp3" type="audio/mpeg">
+</audio>
+</div>
+</div>
+<form>
+<div class="form-container">
+<!-- Personal Information -->
+<fieldset>
+<legend>Personal Information</legend>
+<label>Full Name</label>
+<input type="text" placeholder="Enter Full Name">
+<label>User Name</label>
+<input type="text" placeholder="Enter User Name">
+<label>Password</label>
+<input type="password" placeholder="Enter Password">
+<label>Register Number</label>
+<input type="text" placeholder="URK24CSXXXX">
+<label>Age</label>
+<input type="number">
+<label>Gender</label><br>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<br><br>
+<label>Date of Birth</label>
+<input type="date">
+<label>Favourite Color</label>
+<input type="color">
+<br><br>
+<label>Upload Photo</label>
+<input type="file">
+</fieldset>
+<!-- Contact Information -->
+<fieldset>
+<legend>Contact Information</legend>
+<label>Address</label>
+<textarea rows="3"></textarea>
+<label>State</label>
+<select>
+<option>Select State</option>
+<option>Tamil Nadu</option>
+<option>Kerala</option>
+<option>Karnataka</option>
+<option>Andhra Pradesh</option>
+</select>
+<label>Zip Code</label>
+<input type="number">
+<label>Mobile Number</label>
+<input type="tel" placeholder="9876543210">
+<label>Email</label>
+<input type="email" placeholder="abc@gmail.com">
+<label>Website</label>
+<input type="url" placeholder="https://example.com">
+<br>
+<input type="checkbox"> I agree to the above information.
+<br><br>
+<input type="submit" value="Submit"
+style="background:#1565C0;color:white;padding:8px 20px;border:none;border-radius:5px;cursor:pointer;">
+<input type="reset" value="Reset"
+style="background:#757575;color:white;padding:8px 20px;border:none;border-radius:5px;cursor:pointer;">
+</fieldset>
+</div>
+<div class="bottom">
+<div>
+<h2 style="text-align:center;color:#1565C0;">Embedded Document</h2>
+<embed src="notes.pdf"
+type="application/pdf"
+width="500"
+height="320">
+</div>
+<div>
+<h2 style="text-align:center;color:#1565C0;">Location</h2>
+<iframe
+src="https://www.google.com/maps?q=Karunya%20Institute%20of%20Technology%20and%20Sciences&output=embed"
+width="500"
+height="320"
+style="border:2px solid #1565C0;">
+</iframe>
+</div>
+</div>
+<footer>
+<h3>Contact</h3>
+<p> Coimbatore, Tamil Nadu</p>
+<p> info@karunya.edu</p>
+<p> +91 9876543210</p>
+<p>&copy; 2026 Web Technology Lab</p>
+</footer>
+</form>
+</div>
+</body>
+</html>

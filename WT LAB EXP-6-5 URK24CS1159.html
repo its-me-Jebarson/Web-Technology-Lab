@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Student Details - URK24CS1159</h1>
+<div id="output"></div>
+</div>
+<script>
+var student =
+[
+    {
+        name: "John",
+        r_num: "123",
+        dob: "20-Apr-1995"
+    },
+    {
+        name: "Joseph",
+        r_num: "456",
+        dob: "05-Jan-1998"
+    },
+    {
+        name: "David",
+        r_num: "789",
+        dob: "10-Mar-2002"
+    }
+];
+for(var i = 0; i < student.length; i++)
+{
+    document.getElementById("output").innerHTML +=
+    "Name: " + student[i].name + "<br>";
+    document.getElementById("output").innerHTML +=
+    "Register Number: " + student[i].r_num + "<br>";
+    document.getElementById("output").innerHTML +=
+    "Date of Birth: " + student[i].dob + "<br><br>";
+}
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 35px;
+}
+h1
+{
+    font-size: 60px;
+}
+</style>
+</body>
+</html>

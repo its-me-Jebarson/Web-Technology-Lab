@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 25px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        input, select, button {
+            font-size: 25px;
+            padding: 12px;
+            margin: 10px;
+        }
+        button {
+            cursor: pointer;
+            padding: 15px 35px;
+        }
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1> Currency Converter - URK24CS1159</h1>
+<input type="text" id="data" placeholder="Enter Amount">
+<select id="from">
+    <option value="INR">Indian Rupee</option>
+    <option value="USD">US Dollar</option>
+</select>
+<b>To</b>
+<select id="to">
+    <option value="USD">US Dollar</option>
+    <option value="INR">Indian Rupee</option>
+</select>
+<br><br>
+<button onclick="convert()">Calculate</button>
+<p>Answer: <span id="answer"></span></p>
+<script>
+function convert() {
+    let n = Number(data.value);
+    let f = from.value;
+    let t = to.value;
+    let ans;
+    if (f == "INR" && t == "USD")
+        ans = n * 0.015;
+    else if (f == "USD" && t == "INR")
+        ans = n * 67.12;
+    else
+        ans = n;
+    answer.innerHTML = ans.toFixed(2);
+}
+</script>
+</body>
+</html>

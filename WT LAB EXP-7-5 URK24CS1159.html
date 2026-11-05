@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <style> 
+        body { 
+            font-family: Arial; 
+            background: #ecfdf5; 
+            text-align: center; 
+        } 
+        .box { 
+            width: 650px; 
+            margin: 30px auto; 
+            padding: 25px; 
+            background: #fffdf5; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px #a7b8ad; 
+        } 
+        input { 
+            padding: 8px; 
+            margin: 5px; 
+            width: 130px; 
+        } 
+        button { 
+            padding: 8px 14px; 
+            margin: 5px; 
+            border: 0; 
+            border-radius: 5px; 
+            background: #065f46; 
+            color: white; 
+        } 
+        table { 
+            width: 100%; 
+            margin-top: 20px; 
+            border-collapse: collapse; 
+        } 
+        th, td { 
+            padding: 10px; 
+            border: 1px solid #b7c9bf; 
+        } 
+        th { 
+            background: #064e3b; 
+            color: white; 
+        } 
+        .selected { 
+            background: #a8e1a6; 
+        } 
+        #status { 
+            padding: 8px; 
+            font-weight: bold; 
+            color: #047857; 
+        } 
+    </style> 
+</head> 
+<body> 
+<div class="box"> 
+    <h2>5. Employee Management Dashboard - URK24CS1159</h2> 
+    <input id="id" placeholder="Employee ID"> 
+    <input id="name" placeholder="Employee Name"> 
+    <input id="dept" placeholder="Department"> 
+    <br> 
+    <button id="add">Add Employee</button> 
+    <button id="update">Update</button> 
+    <button id="remove">Remove</button> 
+    <button id="dimension">Show Table Dimensions</button> 
+    <table id="employees"> 
+        <tr> 
+            <th>ID</th> 
+            <th>Name</th> 
+            <th>Department</th> 
+            <th>Action</th> 
+        </tr> 
+        <tr> 
+            <td>101</td> 
+            <td>Riya</td> 
+            <td>HR</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+        <tr> 
+            <td>102</td> 
+            <td>Arjun</td> 
+            <td>IT</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+        <tr> 
+            <td>103</td> 
+            <td>Meera</td> 
+            <td>Finance</td> 
+            <td><button class="select">Select</button></td> 
+        </tr> 
+    </table> 
+    <p id="status"></p> 
+</div> 
+<script> 
+$(function () { 
+    $("#employees").on("click", ".select", function () { 
+        let row = $(this).closest("tr"); 
+        $(".selected").removeClass("selected"); 
+        row.addClass("selected"); 
+        $("#id").val(row.children().eq(0).text()); 
+        $("#name").val(row.children().eq(1).text()); 
+        $("#dept").val(row.children().eq(2).text()); 
+        $("#status").text("Selected employee details loaded."); 
+    }); 
+    $("#add").click(function () { 
+        $("#employees").append( 
+            "<tr><td>" + $("#id").val() + 
+            "</td><td>" + $("#name").val() + 
+            "</td><td>" + $("#dept").val() + 
+            "</td><td><button class='select'>Select</button></td></tr>" 
+        ); 
+        $("#status") 
+            .text("Employee added successfully.") 
+            .css("background", "#d1fae5"); 
+    }); 
+    $("#update").click(function () { 
+        let row = $(".selected"); 
+        row.children().eq(0).text($("#id").val()); 
+        row.children().eq(1).text($("#name").val()); 
+        row.children().eq(2).text($("#dept").val()); 
+        $("#status") 
+            .text("Employee updated successfully.") 
+            .css("background", "#fef3c7"); 
+    }); 
+    $("#remove").click(function () { 
+        $(".selected").remove(); 
+        $("#status") 
+            .text("Employee removed successfully.") 
+            .css("background", "#fee2e2"); 
+    }); 
+    $("#dimension").click(function () { 
+        $("#status").text( 
+            "Width: " + $("#employees").width() + 
+            "px | Height: " + $("#employees").height() + "px" 
+        ); 
+    }); 
+}); 
+</script> 
+</body> 
+</html>

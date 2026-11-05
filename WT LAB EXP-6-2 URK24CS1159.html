@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="box">
+<h1>Dynamic Background! - URK24CS1159</h1>
+<h2>Background colour changes every 5 seconds</h2>
+</div>
+<script>
+function setBackgroundColor()
+{
+    var red =
+    Math.floor(Math.random() * 256);
+    var green =
+    Math.floor(Math.random() * 256);
+    var blue =
+    Math.floor(Math.random() * 256);
+    document.body.style.backgroundColor =
+    "rgb(" + red + "," + green + "," + blue + ")";
+}
+setBackgroundColor();
+setInterval(setBackgroundColor, 5000);
+</script>
+<style>
+#box
+{
+    text-align: center;
+    margin-top: 250px;
+    font-size: 30px;
+}
+</style>
+</body>
+</html>
+

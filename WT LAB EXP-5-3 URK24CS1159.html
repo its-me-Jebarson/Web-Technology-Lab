@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fruit Farm</title>
+</head>
+<body>
+<div style="text-align:center; margin-top:100px;">
+<h1 style="font-size:40px;">
+Fruit Farm - URK24CS1159
+</h1>
+Rows:
+<input type="text" id="rows">
+Columns:
+<input type="text" id="columns">
+<br><br>
+<button onclick="grow()" style="font-size:25px;">
+Plant Garden
+</button>
+<br><br>
+<div id="garden"></div>
+</div>
+<script>
+function grow()
+{
+    let r = rows.value;
+    let c = columns.value;
+    let garden = "";
+    for(let i = 0; i < r * c; i++)
+    {
+        let fruit =
+        Math.random() < 0.5
+        ? "C:\\Users\\jebar\\OneDrive\\Documents\\WT LAB Files\\apple.jpg"
+        : "C:\\Users\\jebar\\OneDrive\\Documents\\WT LAB Files\\orange.jpg";
+        garden +=
+        "<img src='" + fruit +
+        "' width='120' height='120'>";
+        if((i + 1) % c == 0)
+        {
+            garden += "<br>";
+        }
+    }
+    document.getElementById("garden").innerHTML =
+    garden;
+}
+</script>
+</body>
+</html>

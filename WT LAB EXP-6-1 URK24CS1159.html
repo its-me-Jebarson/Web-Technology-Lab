@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Digital Clock - URK24CS1159</h1>
+<style>
+body
+{
+    text-align: center;
+    margin-top: 250px;
+}
+#time
+{
+    font-size: 100px;
+}
+</style>
+<span id="time"></span>
+<script>
+function display()
+{
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    document.getElementById("time").innerHTML =
+    h + ":" + m + ":" + s;
+}
+display();
+setInterval(display, 1000);
+</script>
+</body>
+</html>

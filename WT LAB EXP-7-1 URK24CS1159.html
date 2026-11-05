@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Calculator - URK24CS1159</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #eee;
+        }
+        .box {
+            width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgb(253, 251, 251);
+        }
+        h2 {
+            background: rgb(63, 0, 251);
+            color: white;
+            padding: 8px;
+        }
+        input {
+            width: 55px;
+            margin: 8px;
+            padding: 5px;
+        }
+        button {
+            background: rgb(255, 0, 0);
+            color: white;
+            padding: 8px;
+            border: 0;
+        }
+        #result div {
+            display: inline-block;
+            color: white;
+            padding: 12px;
+            margin: 15px 3px;
+        }
+        .r {
+            background: blue;
+        }
+        .a {
+            background: green;
+        }
+        .e {
+            background: rgb(224, 95, 175);
+        }
+        .s {
+            background: #f08;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>1. Budget Calculator App - URK24CS1159</h2>
+        <b>Enter Amount that you want to Manage</b><br>
+        <input id="amt" value="15000">
+        <p>
+            <b>How would you like to divide your money?</b>
+        </p>
+        Rent % <input id="r" value="50">
+        Accessories % <input id="a" value="20">
+        Emergency % <input id="e" value="20">
+        Saving % <input id="s" value="10">
+        <br>
+        <button id="cal">Evaluate My Money</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        $("#cal").click(function() {
+            let x = +$("#amt").val();
+            let r = +$("#r").val();
+            let a = +$("#a").val();
+            let e = +$("#e").val();
+            let s = +$("#s").val();
+            if (r + a + e + s != 100) {
+                alert("Percentage must be 100%");
+                return;
+            }
+            $("#result").html(
+                "<div class='r'>Room Rent<br>₹" +
+                x * r / 100 + "</div>" +
+                "<div class='a'>Accessories<br>₹" +
+                x * a / 100 + "</div>" +
+                "<div class='e'>Emergency<br>₹" +
+                x * e / 100 + "</div>" +
+                "<div class='s'>Saving<br>₹" +
+                x * s / 100 + "</div>"
+            );
+        });
+    </script>
+</body>
+</html>

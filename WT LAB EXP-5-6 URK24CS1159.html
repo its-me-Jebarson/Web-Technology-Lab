@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Cake Order</title>
+<style>
+body{
+    font-family:Arial;
+    text-align:center;
+    font-size:22px;
+    margin-top:80px;
+}
+fieldset{
+    width:600px;
+    margin:auto;
+}
+input{
+    padding:8px;
+    font-size:18px;
+    margin:8px;
+}
+button{
+    padding:10px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Birthday Cake Order Form - URK24CS1159</h1>
+
+<fieldset>
+Number of 1/2kg Cakes <input id="small" type="number"><br>
+Number of 1kg Cakes <input id="medium" type="number"><br>
+Number of 2kg Cakes <input id="large" type="number"><br>
+
+Tip:
+<input type="radio" name="tip" value="10">10%
+<input type="radio" name="tip" value="15" checked>15%
+<input type="radio" name="tip" value="20">20%<br>
+
+<button id="submit">Calculate Order</button>
+</fieldset>
+
+<p>Cost of order: <span id="price"></span></p>
+
+<script>
+submit.onclick=function(){
+    let cost=small.value*100+medium.value*200+large.value*400;
+    let tip=document.querySelector('input[name="tip"]:checked').value;
+    price.innerHTML="Rs."+(cost*1.09*(1+tip/100)).toFixed(2);
+}
+</script>
+
+</body>
+</html>
