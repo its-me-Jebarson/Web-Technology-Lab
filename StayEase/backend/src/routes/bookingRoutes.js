@@ -1,0 +1,14 @@
+const router = require('express').Router();
+const c = require('../controllers/bookingController');
+const auth = require('../middleware/authMiddleware');
+const admin = require('../middleware/adminMiddleware');
+const operations = require('../controllers/operationsController');
+router.use(auth);
+router.get('/dashboard/stats', admin, operations.dashboard);
+router.get('/my', c.myBookings);
+router.get('/', admin, c.allBookings);
+router.post('/', c.createBooking);
+router.patch('/:id/cancel', c.cancelBooking);
+router.patch('/:id/status', admin, c.updateStatus);
+router.get('/reports/export', admin, operations.exportCsv);
+module.exports = router;
