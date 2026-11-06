@@ -1,1 +1,0 @@
-export default function Footer(){return <footer className="site-footer"><div className="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© {new Date().getFullYear()} StayEase. Find your place to pause.</span><span>Thoughtful stays, made simple.</span></div></footer>;}
