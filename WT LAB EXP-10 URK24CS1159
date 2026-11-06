@@ -1,0 +1,200 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { MongoClient } = require('mongodb');
+
+const client = new MongoClient('mongodb://127.0.0.1:27017');
+
+function escapeHTML(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;',
+        '"': '&quot;', "'": '&#39;'
+    })[char]);
+}
+
+async function startServer() {
+    await client.connect();
+
+    const db = client.db('tourismDB');
+    const tourists = db.collection('tourists');
+
+    const server = http.createServer(async (req, res) => {
+        try {
+            if (req.method === 'GET' && req.url === '/') {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                fs.createReadStream(path.join(__dirname, 'home.html')).pipe(res);
+            }
+
+            else if (req.method === 'POST' && req.url === '/server') {
+                let rawData = '';
+
+                req.on('data', chunk => rawData += chunk);
+
+                req.on('end', async () => {
+                    try {
+                        const form = new URLSearchParams(rawData);
+
+                        const name = form.get('name') || '';
+                        const password = form.get('password') || '';
+                        const age = Number(form.get('age'));
+                        const mobile = form.get('mobile') || '';
+                        const email = form.get('email') || '';
+                        const gender = form.get('gender') || '';
+                        const state = form.get('state') || '';
+                        const destination = form.get('destination') || '';
+                        const skills = form.getAll('skills');
+
+                        if (
+                            !name.trim() ||
+                            password.length < 6 ||
+                            !Number.isInteger(age) || age < 1 || age > 120 ||
+                            !/^[0-9]{10}$/.test(mobile) ||
+                            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+                            !gender || !state || !destination ||
+                            skills.length === 0
+                        ) {
+                            res.writeHead(400, { 'Content-Type': 'text/plain' });
+                            return res.end('Invalid registration details.');
+                        }
+
+                        const tourist = {
+                            name: name.trim(),
+                            password,
+                            age,
+                            mobile,
+                            email,
+                            gender,
+                            state,
+                            destination,
+                            skills,
+                            registeredAt: new Date()
+                        };
+
+                        const result = await tourists.insertOne(tourist);
+                        const saved = await tourists.findOne({
+                            _id: result.insertedId
+                        });
+
+                        const rows = [
+                            ['Full Name', saved.name],
+                            ['Password', '******'],
+                            ['Age', saved.age],
+                            ['Mobile Number', saved.mobile],
+                            ['Email Address', saved.email],
+                            ['Gender', saved.gender],
+                            ['State', saved.state],
+                            ['Registered Event', saved.destination],
+                            ['Event Interests', saved.skills.join(', ')],
+                            ['Registration Date', saved.registeredAt.toLocaleString()]
+                        ];
+
+                        const tableRows = rows.map(([key, value]) => `
+                            <tr>
+                                <th>${escapeHTML(key)}</th>
+                                <td>${escapeHTML(value)}</td>
+                            </tr>
+                        `).join('');
+
+                        res.writeHead(200, {
+                            'Content-Type': 'text/html; charset=utf-8'
+                        });
+
+                        res.end(`
+                            <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <title>Registration Confirmed</title>
+                                <style>
+                                    body {
+                                        margin: 0;
+                                        padding: 30px;
+                                        background: #f5f6fc;
+                                        font-family: Arial, sans-serif;
+                                        color: #172033;
+                                    }
+                                    .card {
+                                        max-width: 700px;
+                                        margin: 50px auto;
+                                        padding: 35px;
+                                        background: white;
+                                        border-radius: 20px;
+                                        box-shadow: 0 10px 35px #25264b15;
+                                    }
+                                    h1 {
+                                        text-align: center;
+                                        color: #6558e8;
+                                    }
+                                    p {
+                                        text-align: center;
+                                        color: #68738a;
+                                    }
+                                    table {
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                        margin-top: 25px;
+                                    }
+                                    th, td {
+                                        padding: 13px;
+                                        text-align: left;
+                                        border-bottom: 1px solid #eee;
+                                    }
+                                    th {
+                                        background: #f5f5fc;
+                                    }
+                                    a {
+                                        display: block;
+                                        width: fit-content;
+                                        margin: 25px auto;
+                                        padding: 13px 22px;
+                                        background: #6558e8;
+                                        color: white;
+                                        text-decoration: none;
+                                        border-radius: 10px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="card">
+                                    <h1>✓ Registration Successful!</h1>
+                                    <p>Your event registration has been saved.</p>
+                                    <table>
+                                        <tr>
+                                            <th>Registration Detail</th>
+                                            <th>Your Information</th>
+                                        </tr>
+                                        ${tableRows}
+                                    </table>
+                                    <a href="/">Register Another Attendee</a>
+                                </div>
+                            </body>
+                            </html>
+                        `);
+
+                    } catch (error) {
+                        console.error(error);
+                        res.writeHead(500);
+                        res.end('Unable to process registration.');
+                    }
+                });
+            }
+
+            else {
+                res.writeHead(404);
+                res.end('Page not found');
+            }
+
+        } catch (error) {
+            console.error(error);
+            res.writeHead(500);
+            res.end('Server error');
+        }
+    });
+
+    server.listen(7000, () => {
+        console.log('Server running at http://localhost:7000');
+    });
+}
+
+startServer().catch(console.error);
